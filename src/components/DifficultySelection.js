@@ -17,4 +17,4 @@ function DifficultySelection({ setDifficulty }) {
   );
 }
 
-export default DifficultySelection;
+export default DifficultySelection; 

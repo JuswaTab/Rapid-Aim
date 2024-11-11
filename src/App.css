@@ -22,7 +22,6 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #0e1320;
-  /* color: white; */
   position: relative;
   cursor: url(./assets/cursorWhite.png), auto;
 }
@@ -31,7 +30,6 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #0e1320;
-  /* color: white; */
   position: relative;
   cursor: url(./assets/cursorDisabled.png), auto;
 }
@@ -115,4 +113,67 @@ body {
 
 .result-container div:first-child {
   font-size: 2.25rem;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #282c34;
+}
+
+.difficulty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  color: white;
+  gap: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.difficulty-option {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.difficulty-option:hover {
+  background-color: #ff4500;
+}
+
+/* Start Game Button */
+.start-game-button {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  color: #0e1320;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.start-game-button:hover {
+  background-color: #ff4500;
+  color: white;
+}
+
+/* Game Screen Styles */
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #222;
+  color: white;
+  font-size: 2rem;
 }

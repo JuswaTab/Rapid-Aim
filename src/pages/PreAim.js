@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import "../App.css";
-import gunFire from "../assets/9mm.mp3";
+import gunFireAudio from "../assets/9mm.mp3";
 import ScoreCard from "../components/ScoreCard/ScoreCard";
 import Timer from "../components/ScoreCard/Timer";
 import TargetPreAim from "../components/Target/TargetPreAim";
 import Result from "./Result";
+
+// Preload audio
+const gunFire = new Audio(gunFireAudio);
 
 function PreAim({ difficulty }) {
   const [score, setScore] = useState(0);
@@ -22,6 +25,12 @@ function PreAim({ difficulty }) {
     }
   }, [countdown]);
 
+  const handleScoreIncrease = () => {
+    gunFire.currentTime = 0;  // Reset audio position
+    gunFire.play();
+    setScore(score + difficulty.pointsMultiplier);
+  };
+
   return (
     <>
       {gameOver ? (
@@ -30,7 +39,7 @@ function PreAim({ difficulty }) {
         <div className="container">
           <ScoreCard score={score} />
           <Timer timer={countdown} />
-          <TargetPreAim score={score} setScore={setScore} respawnRate={difficulty.respawnRate} />
+          <TargetPreAim score={score} setScore={handleScoreIncrease} respawnRate={difficulty.respawnRate} />
         </div>
       )}
     </>
