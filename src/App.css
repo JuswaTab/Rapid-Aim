@@ -115,65 +115,73 @@ body {
   font-size: 2.25rem;
 }
 
-.App {
+
+
+
+.difficulty-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #282c34;
 }
 
-.difficulty-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
-  color: white;
-  gap: 20px;
-  transition: opacity 0.3s ease;
+.difficulty-selection {
+  background-color: #b0b0b0; 
+  padding: 20px;
+  border-radius: 12px; 
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 250px;
 }
 
-.difficulty-option {
-  font-size: 1.5rem;
-  padding: 15px 30px;
-  background-color: #ffa500;
+.difficulty-selection h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.difficulty-button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 18px;
   color: white;
+  background-color: #333; 
   border: none;
-  border-radius: 5px;
+  border-radius: 20px; 
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.difficulty-option:hover {
-  background-color: #ff4500;
+.difficulty-button:hover {
+  background-color: #555; 
+  transform: translateY(-2px);
 }
 
-/* Start Game Button */
-.start-game-button {
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  color: #0e1320;
-  background-color: white;
+.difficulty-button:focus {
+  outline: none;
+  background-color: #777;
+}
+
+
+.start-button {
+  background-color: #333; 
+  color: white;
+  font-size: 18px;
+  padding: 15px;
+  margin-top: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px; 
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.start-game-button:hover {
-  background-color: #ff4500;
-  color: white;
-}
-
-/* Game Screen Styles */
-.game-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #222;
-  color: white;
-  font-size: 2rem;
+.start-button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
 }

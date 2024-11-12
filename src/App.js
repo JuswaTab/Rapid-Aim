@@ -6,13 +6,13 @@ import DifficultySelection from "./components/DifficultySelection";
 import "./App.css";
 
 function App() {
-  const [screen, setScreen] = useState(0); // 0: Home, 1: Difficulty, 2: Game
-  const [gameMode, setGameMode] = useState(null); // 1 for RegAim, 2 for PreAim
+  const [screen, setScreen] = useState(0); 
+  const [gameMode, setGameMode] = useState(null); 
   const [difficulty, setDifficulty] = useState(null);
 
   const handleGameModeSelect = (mode) => {
     setGameMode(mode);
-    setScreen(1); // Move to difficulty selection
+    setScreen(1); 
   };
 
   const startGame = () => {
@@ -20,7 +20,7 @@ function App() {
       alert("Please select a difficulty level!");
       return;
     }
-    setScreen(2); // Move to the game screen
+    setScreen(2); 
   };
 
   return (

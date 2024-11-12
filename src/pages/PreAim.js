@@ -6,12 +6,12 @@ import Timer from "../components/ScoreCard/Timer";
 import TargetPreAim from "../components/Target/TargetPreAim";
 import Result from "./Result";
 
-// Preload audio
+
 const gunFire = new Audio(gunFireAudio);
 
 function PreAim({ difficulty }) {
   const [score, setScore] = useState(0);
-  const [countdown, setCountdown] = useState(difficulty.timer); // Use the timer from difficulty settings
+  const [countdown, setCountdown] = useState(difficulty.timer); 
   const [gameOver, setGameOver] = useState(false);
   
   useEffect(() => {
@@ -26,7 +26,7 @@ function PreAim({ difficulty }) {
   }, [countdown]);
 
   const handleScoreIncrease = () => {
-    gunFire.currentTime = 0;  // Reset audio position
+    gunFire.currentTime = 0;  
     gunFire.play();
     setScore(score + difficulty.pointsMultiplier);
   };

@@ -14,14 +14,14 @@ function TargetRegAim({ score, setScore, respawnRate, difficulty }) {
   const x = window.innerWidth - 120;
   const y = window.innerHeight - 150;
 
-  // Move zombie to random position
+
   const zombieSwitch = () => {
     setxCoord(Math.floor(Math.random() * (x - 20) + 20));
     setyCoord(Math.floor(Math.random() * (y - 50) + 50));
     setZombieFace(zombieArray[Math.floor(Math.random() * zombieArray.length)]);
   };
 
-  // Set interval to reposition zombie
+
   useEffect(() => {
     if (timerId) clearTimeout(timerId);
     const newTimerId = setInterval(() => {
@@ -32,11 +32,11 @@ function TargetRegAim({ score, setScore, respawnRate, difficulty }) {
     return () => clearInterval(newTimerId);
   }, [respawnRate]);
 
-  // Score handler
+
   const handleScore = (e) => {
-    e.stopPropagation();  // Prevents click event from bubbling up
+    e.stopPropagation();
     setScore((prev) => prev + 1);
-    zombieSwitch();  // Immediately reposition zombie on hit
+    zombieSwitch();  
   };
 
   const buttonStyle = {
@@ -47,7 +47,7 @@ function TargetRegAim({ score, setScore, respawnRate, difficulty }) {
     width: "fit-content",
     border: "none",
     cursor: "pointer",
-    pointerEvents: "auto"  // Ensure clicks are allowed on this element
+    pointerEvents: "auto"  
   };
 
   return (

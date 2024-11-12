@@ -25,12 +25,12 @@ function RegAim({ difficulty }) {
   }, [countdown]);
 
   const handleScoreIncrease = () => {
-    // Ensures the sound plays immediately with every click
+
     gunFire.pause();
-    gunFire.currentTime = 0; // Reset audio
+    gunFire.currentTime = 0;
     gunFire.play();
 
-    setScore((prevScore) => prevScore + difficulty.pointsMultiplier); // Increment score based on difficulty multiplier
+    setScore((prevScore) => prevScore + difficulty.pointsMultiplier); 
   };
 
   return (

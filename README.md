@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 # Rapid-Aim
 
 # React
 
-# To the Run the File
+# To Run the File
 
 yarn start
 
