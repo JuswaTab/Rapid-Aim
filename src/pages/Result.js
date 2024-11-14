@@ -1,6 +1,6 @@
 import React from "react";
 
-function Result({ score }) {
+function Result({ score, onRetry }) {
   return (
     <div className="result-container">
       <div> Your Score is {score} </div>
@@ -13,11 +13,11 @@ function Result({ score }) {
           <span style={{ color: "red" }}> Not Good Enough </span>
         )}
       </div>
-      <button
-        className="start-button"
-        onClick={() => window.location.reload(true)}
-      >
-        Go to home
+      <button className="start-button" onClick={onRetry}>
+        Retry
+      </button>
+      <button className="start-button" onClick={() => window.location.reload()}>
+        Go to Home
       </button>
     </div>
   );

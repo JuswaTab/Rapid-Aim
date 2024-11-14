@@ -13,6 +13,12 @@ function RegAim({ difficulty }) {
   const [countdown, setCountdown] = useState(difficulty.timer);
   const [gameOver, setGameOver] = useState(false);
 
+  const onRetry = () => {
+    setScore(0);
+    setCountdown(difficulty.timer);
+    setGameOver(false);
+  };
+
   useEffect(() => {
     if (countdown === 0) {
       setGameOver(true);
@@ -25,18 +31,16 @@ function RegAim({ difficulty }) {
   }, [countdown]);
 
   const handleScoreIncrease = () => {
-
     gunFire.pause();
     gunFire.currentTime = 0;
     gunFire.play();
-
     setScore((prevScore) => prevScore + difficulty.pointsMultiplier); 
   };
 
   return (
     <>
       {gameOver ? (
-        <Result score={score} />
+        <Result score={score} onRetry={onRetry} />
       ) : (
         <div className="container">
           <ScoreCard score={score} />

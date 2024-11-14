@@ -6,15 +6,19 @@ import Timer from "../components/ScoreCard/Timer";
 import TargetPreAim from "../components/Target/TargetPreAim";
 import Result from "./Result";
 
-
-
 const gunFire = new Audio(gunFireAudio);
 
 function PreAim({ difficulty }) {
   const [score, setScore] = useState(0);
   const [countdown, setCountdown] = useState(difficulty.timer); 
   const [gameOver, setGameOver] = useState(false);
-  
+
+  const onRetry = () => {
+    setScore(0);
+    setCountdown(difficulty.timer);
+    setGameOver(false);
+  };
+
   useEffect(() => {
     if (countdown === 0) {
       setGameOver(true);
@@ -35,7 +39,7 @@ function PreAim({ difficulty }) {
   return (
     <>
       {gameOver ? (
-        <Result score={score} />
+        <Result score={score} onRetry={onRetry} />
       ) : (
         <div className="container">
           <ScoreCard score={score} />

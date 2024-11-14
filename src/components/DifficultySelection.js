@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DifficultySelection({ setDifficulty }) {
+function DifficultySelection({ setDifficulty, onBack }) {
   return (
     <div className="difficulty-selection">
       <h2>Select Difficulty</h2>
@@ -12,6 +12,9 @@ function DifficultySelection({ setDifficulty }) {
       </button>
       <button className="difficulty-button hard-button" onClick={() => setDifficulty({ respawnRate: 300, timer: 15, pointsMultiplier: 5 })}>
         Hard
+      </button>
+      <button className="back-button" onClick={onBack}>
+        Back to Home
       </button>
     </div>
   );
