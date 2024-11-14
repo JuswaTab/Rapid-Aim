@@ -3,38 +3,26 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  /* cursor: url(./assets/cursorWhite.png), auto; */
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
+  font-family: 'Orbitron', sans-serif;
   user-select: none;
+  overflow: hidden;
+  background-color: #0e1320;
 }
 
-.button:hover {
-  cursor: url(./assets/cursorRed.png), auto;
-}
-
+/* Container for the whole app */
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
   background-color: #0e1320;
   position: relative;
-  cursor: url(./assets/cursorWhite.png), auto;
-}
-
-.container-2 {
-  height: 100vh;
-  width: 100vw;
-  background-color: #0e1320;
-  position: relative;
-  cursor: url(./assets/cursorDisabled.png), auto;
-}
-
-.aim {
+  color: white;
   cursor: url(./assets/cursorWhite.png), auto;
 }
 
@@ -43,81 +31,39 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  gap: 60px;
+  gap: 40px;
+  text-align: center;
 }
 
+img {
+  max-width: 100%;
+}
+
+/* Start button */
 .start-button {
-  background-color: transparent;
+  background-color: #333;
   color: white;
-  font-size: 2rem;
-  border: 4px solid white;
-  transition: all 0.3s ease;
-  padding: 20px 60px;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  border: 2px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .start-button-helper-text {
-  font-size: 0.825rem;
-  padding: 10px;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  color: #888;
 }
 
 .start-button:hover {
-  cursor: url(./assets/cursorRed.png), auto;
   background-color: white;
-  color: #0e1320;
+  color: #333;
+  transform: translateY(-3px);
 }
 
-.target {
-  position: absolute;
-  z-index: 10;
-  color: red;
-}
-
-.score {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.score img {
-  max-height: 150px;
-  width: auto;
-}
-
-.timer {
-  font-family: "Orbitron", sans-serif;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.timer img {
-  max-height: 150px;
-  width: auto;
-}
-
-.result-container {
-  height: 100vh;
-  width: 100vw;
-  background-color: #0e1320;
-  color: white;
-  position: relative;
-  cursor: url(./assets/cursorWhite.png), auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 40px;
-  font-size: 1.825rem;
-}
-
-.result-container div:first-child {
-  font-size: 2.25rem;
-}
-
-
-
-
+/* Difficulty selection overlay */
 .difficulty-overlay {
   position: fixed;
   top: 0;
@@ -130,13 +76,165 @@ body {
   align-items: center;
 }
 
+.difficulty-container {
+  text-align: center;
+  margin-top: 245px;
+  justify-items: center;
+}
+
 .difficulty-selection {
-  background-color: #b0b0b0; 
+  background-color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  color: white;
+}
+
+.difficulty-selection h2 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+
+.difficulty-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 1.125rem;
+  color: white;
+  background-color: #555;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.difficulty-button:hover {
+  background-color: #777;
+  transform: translateY(-2px);
+}
+
+/* Start game button */
+.start-game-button {
+  background-color: #f04;
+  color: white;
+  font-size: 1.3em;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-game-button:hover {
+  background-color: #d03;
+  transform: translateY(-3px);
+}
+
+/* Timer styling */
+.timer {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer img {
+  height: 180px;
+  width: auto;
+}
+
+/* ScoreCard styling */
+.score {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.score img {
+  height: 180px;
+  width: auto;
+}
+
+
+.target {
+  position: absolute;
+  z-index: 10;
+  color: red;
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor: url(./assets/cursorRed.png), auto;
+}
+
+.button img {
+  pointer-events: none;
+}
+
+
+.result-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  color: white;
+  margin-top: 300px;
+}
+
+.result-container div:first-child {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.result-container div {
+  font-size: 1.5rem;
+}
+
+.result-container span {
+  font-weight: bold;
+}
+
+
+.result-container .start-button {
+  background-color: #f04;
+  padding: 10px 20px;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.result-container .start-button:hover {
+  background-color: #d03;
+  transform: translateY(-3px);
+}
+
+.difficulty-selection {
+  background-color: #b0b0b0;
   padding: 20px;
-  border-radius: 12px; 
+  border-radius: 12px;
   text-align: center;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .difficulty-selection h2 {
@@ -148,40 +246,31 @@ body {
 .difficulty-button {
   width: 100%;
   padding: 15px;
-  margin: 10px 0;
   font-size: 18px;
   color: white;
-  background-color: #333; 
+  background-color: #333;
   border: none;
-  border-radius: 20px; 
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .difficulty-button:hover {
-  background-color: #555; 
-  transform: translateY(-2px);
-}
-
-.difficulty-button:focus {
-  outline: none;
-  background-color: #777;
-}
-
-
-.start-button {
-  background-color: #333; 
-  color: white;
-  font-size: 18px;
-  padding: 15px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 20px; 
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.start-button:hover {
   background-color: #555;
   transform: translateY(-2px);
 }
+
+.easy-button {
+  align-self: flex-start; 
+}
+
+.normal-button {
+  align-self: center;
+}
+
+.hard-button {
+  align-self: flex-end;
+}
+
+
+

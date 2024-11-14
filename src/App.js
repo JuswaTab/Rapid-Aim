@@ -5,6 +5,8 @@ import RegAim from "./pages/RegAim";
 import DifficultySelection from "./components/DifficultySelection";
 import "./App.css";
 
+
+
 function App() {
   const [screen, setScreen] = useState(0); 
   const [gameMode, setGameMode] = useState(null); 

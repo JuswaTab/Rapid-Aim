@@ -4,6 +4,7 @@ import zombie2 from "../../assets/3.png";
 import zombie3 from "../../assets/4.png";
 import zombie4 from "../../assets/2.png";
 
+
 function TargetPreAim({ score, setScore, respawnRate }) {
   const zombieArray = [zombie1, zombie2, zombie3, zombie4];
   let zombie = 0;
@@ -62,4 +63,4 @@ function TargetPreAim({ score, setScore, respawnRate }) {
   );
 }
 
-export default TargetPreAim;
+export default TargetPreAim; 

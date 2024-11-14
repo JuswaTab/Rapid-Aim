@@ -17,7 +17,7 @@ function ScoreCard({ score }) {
     <div className="score">
       <img src={Score} alt="score" />
       <div style={ScoreStyle}>
-        <span style={{ fontSize: "1.125rem" }}> Score: </span> <br />
+        <span style={{ fontSize: "1.125rem"}}> Score: </span> <br />
         {score}
       </div>
     </div>

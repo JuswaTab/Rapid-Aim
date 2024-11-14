@@ -4,6 +4,9 @@ import zombie2 from "../../assets/3.png";
 import zombie3 from "../../assets/4.png";
 import zombie4 from "../../assets/2.png";
 
+
+
+
 function TargetRegAim({ score, setScore, respawnRate, difficulty }) {
   const zombieArray = [zombie1, zombie2, zombie3, zombie4];
   const [xCoord, setxCoord] = useState(300);
