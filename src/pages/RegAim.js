@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "../App.css";
 import gunFireAudio from "../assets/9mm.mp3";
-import ScoreCard from "../components/ScoreCard/ScoreCard";
+import ScoreCard from "../components/ScoreCard/ScoreBoard";
 import Timer from "../components/ScoreCard/Timer";
 import TargetRegAim from "../components/Target/TargetRegAim";
 import Result from "./Result";

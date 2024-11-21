@@ -33,6 +33,7 @@ body {
   flex-direction: column;
   gap: 40px;
   text-align: center;
+  z-index: 1;
 }
 
 img {
@@ -47,7 +48,7 @@ img {
   padding: 15px 30px;
   border: 2px solid white;
   border-radius: 20px;
-  cursor: pointer;
+  cursor: url(./assets/cursorRed.png), auto;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -80,6 +81,7 @@ img {
   text-align: center;
   margin-top: 245px;
   justify-items: center;
+  
 }
 
 .difficulty-selection {
@@ -106,7 +108,7 @@ img {
   background-color: #555;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: url(./assets/cursorRed.png), auto;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -123,8 +125,10 @@ img {
   margin-top: 20px;
   border: none;
   border-radius: 12px;
-  cursor: pointer;
+  cursor: url(./assets/cursorRed.png), auto;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1;
+
 }
 
 .start-game-button:hover {
@@ -193,6 +197,7 @@ img {
   text-align: center;
   color: white;
   margin-top: 300px;
+  cursor: url(./assets/cursorRed.png), auto;
 }
 
 .result-container div:first-child {
@@ -215,7 +220,7 @@ img {
   font-size: 1.3em;
   border: none;
   border-radius: 20px;
-  cursor: pointer;
+  cursor: url(./assets/cursorRed.png), auto;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -225,7 +230,7 @@ img {
 }
 
 .difficulty-selection {
-  background-color: #b0b0b0;
+  background-color: transparent;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
@@ -234,6 +239,11 @@ img {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.h2-DiSec{
+  font-weight: 800;
+  font-size: large;
 }
 
 .difficulty-selection h2 {
@@ -280,7 +290,7 @@ img {
   margin-top: 10px;
   border: 2px solid white;
   border-radius: 20px;
-  cursor: pointer;
+  cursor: url(./assets/cursorRed.png), auto;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -290,4 +300,41 @@ img {
   transform: translateY(-3px);
 }
 
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  cursor: url(./assets/cursorWhite.png), auto;;
+}
 
+.difficulty-selection {
+  position: relative;
+}
+
+.blood-splash {
+  animation: fadeOut 1.2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+.background-video-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
