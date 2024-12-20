@@ -15,6 +15,7 @@ const TimerStyle = {
   textAlign: "center",
 };
 
+// Timer component displays the remaining time for the game.
 function Timer({ timer }) {
   return (
     <div className="timer">

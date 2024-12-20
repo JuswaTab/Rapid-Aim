@@ -7,25 +7,32 @@ import Mob4 from "../../assets/Insect 4.png";
 import Mob5 from "../../assets/Insect 5.png";
 import Mob6 from "../../assets/Insect 6.png";
 import Mob7 from "../../assets/Insect 7.png";
+import Mob8 from "../../assets/1.png";
+import Mob9 from "../../assets/2.png";
+import Mob10 from "../../assets/3.png";
+import Mob11 from "../../assets/4.png";
 
+// Challenge component handles the gameplay logic for Challenge mode.
 function Challenge({ score, setScore }) {
-  const mobArray = [Mob1, Mob2, Mob3, Mob4, Mob5, Mob6, Mob7];
-  const [xCoord, setxCoord] = useState(300);
-  const [yCoord, setyCoord] = useState(300);
-  const [mobFace, setMobFace] = useState(mobArray[0]);
-  const [respawnRate, setRespawnRate] = useState(1000); 
-  const [timerId, setTimerId] = useState(null);
-  const [bloodSplashes, setBloodSplashes] = useState([]); 
+  const mobArray = [Mob1, Mob2, Mob3, Mob4, Mob5, Mob6, Mob7, Mob8, Mob9, Mob10, Mob11];
+  const [xCoord, setxCoord] = useState(300); // X-coordinate of the target
+  const [yCoord, setyCoord] = useState(300); // Y-coordinate of the target
+  const [mobFace, setMobFace] = useState(mobArray[0]); // Current mob image
+  const [respawnRate, setRespawnRate] = useState(1000); // Target respawn rate
+  const [timerId, setTimerId] = useState(null); // Timer for respawn
+  const [bloodSplashes, setBloodSplashes] = useState([]); // Blood splashes on hit
 
-  let x = window.innerWidth - 120;
-  let y = window.innerHeight - 150;
+  let x = window.innerWidth - 120; // Maximum X-coordinate boundary for the target's position
+  let y = window.innerHeight - 150; // Maximum Y-coordinate boundary for the target's position
 
+  // Switch the mob's position and image randomly
   const mobSwitch = () => {
     setxCoord(Math.floor(Math.random() * (x - 20) + 20));
     setyCoord(Math.floor(Math.random() * (y - 50) + 50));
     setMobFace(mobArray[Math.floor(Math.random() * mobArray.length)]);
   };
 
+  // Adjust respawn rate based on the score and set up a respawn timer
   useEffect(() => {
     if (score >= 45) {
       setRespawnRate(300); 

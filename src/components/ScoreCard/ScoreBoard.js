@@ -12,6 +12,7 @@ const ScoreStyle = {
   textAlign: "center",
 };
 
+// ScoreBoard component displays the player's current score.
 function ScoreBoard({ score }) {
   return (
     <div className="score">

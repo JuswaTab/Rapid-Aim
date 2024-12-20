@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Home from "./components/Home/Home";
-import PreAim from "./pages/ChallengeAim";
+import ChallengeAim from "./pages/ChallengeAim";
 import RegAim from "./pages/RegAim";
 import DifficultySelection from "./components/DifficultySelection";
 import "./App.css";
@@ -34,7 +34,7 @@ function App() {
       {screen === 0 && (
         <Home
           regAim={() => handleGameModeSelect(1)}
-          preAim={() => handleGameModeSelect(2)}
+          challengeAim={() => handleGameModeSelect(2)}
         />
       )}
 
@@ -54,7 +54,7 @@ function App() {
         (gameMode === 1 ? (
           <RegAim difficulty={difficulty} />
         ) : (
-          <PreAim />
+          <ChallengeAim />
         ))}
     </div>
   );

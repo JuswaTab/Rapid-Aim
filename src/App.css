@@ -8,24 +8,26 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  user-select: none;
-  overflow: hidden;
-  background-color: #0e1320;
+  user-select: none; 
+  overflow: hidden; /* Prevent scrollbars */
+  background-color: #0e1320; /* Dark background for a sleek look */
+
 }
 
-
+/* General container styles */
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #0e1320;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: #0e1320; /* Match body background */
   position: relative;
   color: white;
   cursor: url(./assets/cursorWhite.png), auto;
 }
 
+/* Styling for the home screen container */
 .home-container {
   display: flex;
   align-items: center;
@@ -33,23 +35,24 @@ body {
   flex-direction: column;
   gap: 40px;
   text-align: center;
-  z-index: 1;
+  z-index: 1; /* Ensure it's above the background */
 }
 
+/* Responsive images */
 img {
   max-width: 100%;
 }
 
-
+/* Button styling */
 .start-button {
-  background-color: #333;
+  background-color: #333; /* Dark button */
   color: white;
   font-size: 1.5rem;
   padding: 15px 30px;
   border: 2px solid white;
   border-radius: 20px;
   cursor: url(./assets/cursorRed.png), auto;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
 }
 
 .start-button-helper-text {
@@ -58,25 +61,27 @@ img {
   color: #888;
 }
 
+/* Hover effects for the start button */
 .start-button:hover {
-  background-color: white;
+  background-color: white; /* Inverse colors on hover */
   color: #333;
-  transform: translateY(-3px);
+  transform: translateY(-3px); /* Slight upward movement */
 }
 
-
+/* Overlay for difficulty selection */
 .difficulty-overlay {
-  position: fixed;
+  position: fixed; /* Covers the entire screen */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* Transparent black background */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Container for difficulty selection */
 .difficulty-container {
   text-align: center;
   margin-top: 245px;
@@ -84,6 +89,7 @@ img {
   
 }
 
+/* Difficulty selection box styling */
 .difficulty-selection {
   background-color: #333;
   padding: 30px;
@@ -93,11 +99,13 @@ img {
   color: white;
 }
 
+/* Difficulty selection heading */
 .difficulty-selection h2 {
   font-size: 1.75rem;
   margin-bottom: 20px;
 }
 
+/* Difficulty button styling */
 .difficulty-button {
   display: block;
   width: 100%;
@@ -112,10 +120,12 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Hover effects for difficulty buttons */
 .difficulty-button:hover {
   background-color: #777;
   transform: translateY(-2px);
 }
+
 
 .start-game-button {
   background-color: #f04;
@@ -252,23 +262,34 @@ img {
   color: #333;
 }
 
+
 .difficulty-button {
-  width: 100%;
-  padding: 15px;
-  font-size: 18px;
-  color: white;
-  background-color: #333;
-  border: none;
-  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
+
+.difficulty-button:hover {
+  background-color: #f0f0f0;
+}
+
+
+.difficulty-button.selected {
+  background-color: red; 
+  border: 2px solid red;
+  color: white;
+  font-weight: bold;
+}
+
 
 .difficulty-button:hover {
   background-color: #555;
   transform: translateY(-2px);
 }
-
+/* Buttons styled for different difficulties */
 .easy-button {
   align-self: flex-start; 
 }
@@ -338,3 +359,4 @@ img {
   object-fit: cover;
   z-index: 1;
 }
+
